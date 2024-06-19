@@ -1,0 +1,5 @@
+{
+    "name": "Test Agent",
+    "description": "Test agent",
+    "system_prompt": "You are a helpful assistant."
+}

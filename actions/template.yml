@@ -1,0 +1,29 @@
+# Bundle configuration for the agent. This is essentially a manifest file that defines the resources necessary
+# to deploy an agent.
+#
+# An "Agent Runtime Bundle" (`.arb`) is a specially crafted (ZIP) archive of the agent code, its dependencies, and
+# required resources. Specifically, the bundle must contain a `MANIFEST.yml` file that describes the Agent's runtime
+# requirements.
+#
+# This file represents an example of what a `MANIFEST.yml` file might look like.
+
+s4d-bundle:
+  agents:
+    - agent:
+        name: "<<replace>>"
+        description: "<<replace>>"
+        # Lord I wish we had more reasonable ids for this
+        model: "GPT 4o"
+        system-prompt: "prompts/SYSTEM_PROMPT.md"
+        # TODO: Implement ability to pull system prompts from a URL.
+        # systemprompt-url: "https://example.com/system_prompt.txt"
+
+        # Override the retrieval prompt
+        retrieval-prompt: "prompts/RETRIEVAL_PROMPT.md"
+
+        tools:
+          - "retrieval"
+
+        # RAG files
+        # files:
+        #   - "files/sample.txt"

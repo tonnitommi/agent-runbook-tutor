@@ -1,0 +1,36 @@
+# Bundle configuration for the agent. This is essentially a manifest file that defines the resources necessary
+# to deploy an agent.
+#
+# An "Agent Runtime Bundle" (`.arb`) is a specially crafted (ZIP) archive of the agent code, its dependencies, and
+# required resources. Specifically, the bundle must contain a `MANIFEST.yml` file that describes the Agent's runtime
+# requirements.
+#
+# This file represents an example of what a `MANIFEST.yml` file might look like.
+
+s4d-bundle:
+  agents:
+    - agent:
+        name: "Sema4.ai Runbook Genius v0.0.3"
+        description: "Want to learn about how to create effective Runbooks? Start chatting with the Runbook Genius!"
+        # Lord I wish we had more reasonable ids for this
+        model: "GPT 4 Turbo"
+        # The runbook/system prompt
+        system-prompt: "prompts/runbook_tutor.md"
+        # Override the retrieval prompt
+        retrieval-prompt: "prompts/RETRIEVAL_PROMPT.md"
+        # TODO: Implement ability to pull system prompts from a URL.
+        # systemprompt-url: "https://example.com/system_prompt.txt"
+
+        initial-thread-name: "Welcome"
+        initial-thread-message: "Hello! I'm the Sema4.ai Runbook Genius. I can help you create effective runbooks. What would you like to learn about today?"
+        tools:
+          - "retrieval"
+        # RAG files
+        files:
+          - "files/Algorithm of Thoughts- Enhancing Exploration of Ideas in Large Language Models.pdf"
+          - "files/Beyond Chain-of-Thought, Effective Graph-of-Thought Reasoning in Large Language Models.pdf"
+          - "files/Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.pdf"
+          - "files/Graph of Thoughts- Solving Elaborate Problems with Large Language Models.pdf"
+          - "files/SELF-CONSISTENCY IMPROVES CHAIN OF THOUGHT REASONING IN LANGUAGE MODELS.pdf"
+          - "files/Skeleton-of-Thought- Large Language Models Can Do Parallel Decoding .pdf"
+          - "files/Tree of Thoughts- Deliberate Problem Solving with Large Language Models.pdf"

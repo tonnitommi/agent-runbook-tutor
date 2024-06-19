@@ -1,0 +1,26 @@
+{
+    "name": "test1",
+    "config": {
+        "configurable": {
+            "type": "agent",
+            "type==agent/agent_type": "GPT 4o",
+            "type==agent/interrupt_before_action": false,
+            "type==agent/retrieval_description": "Can be used to look up information that was uploaded to this assistant.\nIf the user is referencing particular files, that is often a good hint that information may be here.\nIf the user asks a vague question, they are likely meaning to look up info from this retriever, and you should call it!",
+            "type==agent/system_message": "You are an assistant with the following name: test1.\nThe current date and time is: ${CURRENT_DATETIME}.\nYour instructions are:\nyou are helpful",
+            "type==agent/description": "na",
+            "type==agent/tools": [
+                {
+                    "type": "action_server_by_sema4ai",
+                    "name": "Action Server by Sema4.ai",
+                    "description": "Run AI actions with [Sema4.ai Action Server](https://github.com/Sema4AI/actions).",
+                    "config": {
+                        "url": "http://localhost:8693",
+                        "api_key": "APIKEY",
+                        "name": "Dummy Workers Compensation Claims",
+                        "isBundled": "false"
+                    }
+                }
+            ]
+        }
+    }
+}
